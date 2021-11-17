@@ -3,14 +3,13 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex border py-2 justify-between">
+    <div className="flex justify-between py-2 border">
       <div>
         <p>LOGO</p>
       </div>
-      <div className="space-x-6">
-        <button>xyz</button>
-        <button>about</button>
-      </div>
+      <nav className="space-x-6">
+        <ul>{/* link list */}</ul>
+      </nav>
     </div>
   );
 };
