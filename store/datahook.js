@@ -25,7 +25,23 @@ export const useSpaceData = (param) => {
     return spaceData.map((item) => item.name);
   })();
   // need to muatate the path for it to work currectly
-  const currentImage = currentlySelected.images.png.replace(".", "");
+  // const currentImage = currentlySelected.images.png.replace(".", "");
+
+  // the image path for technology is different
+  const currentImage = (() => {
+    if (currentlySelected.images.portrait !== undefined) {
+      const landscape = currentlySelected.images.landscape.replace(".", "");
+      const portrait = currentlySelected.images.portrait.replace(".", "");
+
+      return {
+        imageLandscape: landscape,
+        imagePortrait: portrait,
+      };
+    } else {
+      return currentlySelected.images.png.replace(".", "");
+      console.log("not tech");
+    }
+  })();
 
   return {
     spaceData,

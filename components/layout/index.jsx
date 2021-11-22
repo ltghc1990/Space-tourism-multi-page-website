@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   return (
     <div className="bg-gray-900 ">
       <div
-        className="h-screen px-6 mx-auto bg-center bg-no-repeat bg-cover font-barlow text-primary max-w-screen-3xl md:px-8 lg:px-10 xl:px-12 2xl:px-16"
+        className="h-screen px-8 mx-auto bg-center bg-no-repeat bg-cover text-primary max-w-screen-3xl md:px-8 lg:px-10 xl:px-12 2xl:px-16"
         style={{ backgroundImage: `url(${bg.path})` }}
       >
         <Spacing />

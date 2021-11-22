@@ -6,10 +6,10 @@ module.exports = {
       fontFamily: {
         barlow: "Barlow",
         barlowCondensed: '"Barlow Condensed"',
-        bellefair: "bellefair",
+        bellefair: "Bellefair",
       },
       textColor: {
-        primary: "#D5D7EF",
+        primary: "#d6d0f9",
       },
     },
   },

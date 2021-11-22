@@ -33,18 +33,18 @@ const Navbar = () => {
         <div className=" md:hidden">
           <MobileButtonMenu menuHandler={menuHandler} open={open} />
         </div>
-        <div className="hidden py-4 text-gray-400 uppercase bg-gray-600 md:block font-bellafair">
+        <nav className="hidden py-4 text-gray-400 uppercase bg-gray-600 md:block">
           {navlinks.map((item, index) => {
             return (
               <Link href={item.link} passHref key={item.name}>
-                <motion.a className="px-4 py-4 border cursor-pointer">
+                <motion.a className="px-4 py-4 font-thin border cursor-pointer">
                   <span className="text-gray-100">{`0${index} `}</span>
                   {item.name}
                 </motion.a>
               </Link>
             );
           })}
-        </div>
+        </nav>
       </div>
     </div>
   );
