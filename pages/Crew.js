@@ -19,7 +19,7 @@ const Crew = () => {
   return (
     <div>
       <Header span={"02 "}>Meet your crew</Header>
-      <Container>
+      <Container reverse>
         <ContainerItem>
           <Image
             src={currentImage}
@@ -35,6 +35,10 @@ const Crew = () => {
               array={navList}
               currentNav={currentNav}
               currentlySelectedHandler={currentlySelectedHandler}
+              custom={{
+                li: "w-4 h-4 bg-gray-500 rounded-xl relative",
+                active: "bg-white w-full left-0 rounded-xl absolute",
+              }}
             />
             <h3 className="text-gray-500 ">{currentlySelected.role}</h3>
             <h2 className="my-2 text-2xl font-barlow">

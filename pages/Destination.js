@@ -25,19 +25,23 @@ const Destination = () => {
         <ContainerItem>
           <Image
             src={currentImage}
-            width="300"
-            height="300"
+            width="280"
+            height="280"
             alt={currentlySelected.name}
             objectFit="contain"
           />
         </ContainerItem>
         <ContainerItem>
-          <div className="max-w-md">
+          <div className="max-w-md mb-10">
             <GenericList
+              show
               array={navList}
               currentlySelectedHandler={currentlySelectedHandler}
               currentNav={currentNav}
-              custom={{}}
+              custom={{
+                ul: "uppercase",
+                active: "border-b-2 border-white text-gray-100",
+              }}
             ></GenericList>
             <h2 className="mb-4 text-6xl tracking-widest text-gray-100 uppercase font-barlow">
               {currentlySelected.name}
@@ -46,16 +50,16 @@ const Destination = () => {
             <div className="border border-gray-300"></div>
             <Container>
               <ContainerItem>
-                <div className="">
-                  <p className="mt-8 text-xs uppercase">Avg. Distance</p>
+                <div className="uppercase">
+                  <p className="mt-8 text-xs ">Avg. Distance</p>
                   <span className="text-3xl text-gray-100 font-barlow">
                     {currentlySelected.distance}
                   </span>
                 </div>
               </ContainerItem>
               <ContainerItem>
-                <div className="lg:flex lg:flex-col lg:justify-start">
-                  <p className="mt-8 text-xs uppercase">Est. travel time</p>
+                <div className="uppercase">
+                  <p className="mt-8 text-xs">Est. travel time</p>
                   <span className="text-3xl text-gray-100 font-barlow">
                     {currentlySelected.travel}
                   </span>

@@ -5,7 +5,7 @@ const Container = ({ children, reverse }) => {
   return (
     <div
       className={`mx-auto text-center border lg:flex lg:items-center lg:text-left  ${
-        reverse && "lg:flex-row-reverse"
+        reverse && "lg:flex-row-reverse md:flex flex-col"
       }`}
     >
       {children}
