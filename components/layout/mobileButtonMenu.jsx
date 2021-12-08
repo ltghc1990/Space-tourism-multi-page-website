@@ -17,7 +17,7 @@ const MobileButtonMenu = ({ open, menuHandler }) => {
           onClick={menuHandler}
         />
       </Menu.Button>
-      <Menu.Items className="absolute right-0 flex flex-col bg-white top-12">
+      <Menu.Items className="absolute right-0 flex flex-col top-12">
         {navlinks.map((item) => {
           return (
             <Menu.Item key={item.name}>

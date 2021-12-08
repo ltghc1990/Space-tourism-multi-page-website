@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import Image from "next/image";
 import Header from "../components/Header";
 import { useSpaceData } from "../store/datahook";
 import Container from "../components/Container";
 import { ContainerItem } from "../components/Container";
 import GenericList from "../components/GenericlList";
-
+import { BgContext } from "../store/BgProvider";
+// updateBG
 const Technology = () => {
   const {
     navList,
@@ -15,17 +16,11 @@ const Technology = () => {
     currentlySelectedHandler,
   } = useSpaceData("technology");
 
+  // need this for useEffect to update the image when resized
+  const { breakpoint } = useContext(BgContext);
+
   console.log(currentlySelected);
-
-  const [innerWidth, setInnerWidth] = useState();
-
-  useEffect(() => {
-    const onResize = () => {
-      setInnerWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+  console.log(breakpoint);
 
   if (typeof window === undefined) {
     return <div>Loading....</div>;
@@ -38,12 +33,12 @@ const Technology = () => {
         <ContainerItem>
           <Image
             src={
-              innerWidth < 768
+              breakpoint === "mobile"
                 ? currentImage.imageLandscape
                 : currentImage.imagePortrait
             }
-            width={innerWidth < 768 ? "300" : "500"}
-            height={innerWidth < 768 ? "300" : "500"}
+            width={breakpoint === "mobile" ? "300" : "500"}
+            height={breakpoint === "mobile" ? "300" : "500"}
             alt={currentlySelected.name}
             objectFit="contain"
           />
@@ -56,7 +51,7 @@ const Technology = () => {
               currentlySelectedHandler={currentlySelectedHandler}
             />
             <span className="uppercase">The terminology...</span>
-            <h2 className="text-4xl">{currentlySelected.name}</h2>
+            <h2 className="text-4xl text-gray-100">{currentlySelected.name}</h2>
             <p>{currentlySelected.description}</p>
           </div>
         </ContainerItem>

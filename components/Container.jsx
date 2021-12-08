@@ -4,8 +4,8 @@ const Container = ({ children, reverse }) => {
   console.log(reverse);
   return (
     <div
-      className={`mx-auto text-center border lg:flex lg:items-center lg:text-left  ${
-        reverse && "lg:flex-row-reverse md:flex flex-col"
+      className={`mx-auto text-center border md:flex md:flex-col md:items-center lg:flex-row lg:text-left  ${
+        reverse && "md:flex-col-reverse lg:flex-row-reverse"
       }`}
     >
       {children}

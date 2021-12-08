@@ -30,7 +30,7 @@ const Crew = () => {
           />
         </ContainerItem>
         <ContainerItem>
-          <div>
+          <div className="flex flex-col max-w-md mx-auto">
             <GenericList
               array={navList}
               currentNav={currentNav}
@@ -41,7 +41,7 @@ const Crew = () => {
               }}
             />
             <h3 className="text-gray-500 ">{currentlySelected.role}</h3>
-            <h2 className="my-2 text-2xl font-barlow">
+            <h2 className="my-2 text-2xl text-gray-100 font-barlow ">
               {currentlySelected.name}
             </h2>
             <p className="my-8">{currentlySelected.bio}</p>
